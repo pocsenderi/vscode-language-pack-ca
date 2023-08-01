@@ -26,7 +26,7 @@ Tota la documentació i commits seran, preferiblement, en català.
 - [ ] vscode.extension-editing.i18n.json
 - [ ] vscode.fsharp.i18n.json
 - [ ] vscode.git-base.i18n.json
-- [ ] vscode.git.i18n.json
+- [x] vscode.git.i18n.json
 - [ ] vscode.github-authentication.i18n.json
 - [ ] vscode.github.i18n.json
 - [ ] vscode.go.i18n.json
