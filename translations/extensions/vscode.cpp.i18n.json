@@ -9,8 +9,8 @@
 	"version": "1.0.0",
 	"contents": {
 		"package": {
-			"description": "Proporciona fragmentos de código, resaltado de sintaxis, correspondencia de corchetes y plegado de código en archivos de C/C++.",
-			"displayName": "Conceptos básicos del lenguaje C y C++"
+			"description": "Proporciona fragments, ressaltat de sintaxi, correspondència de parèntesis i plegat en fitxers C/C++.",
+			"displayName": "Conceptes bàsics de C/C++"
 		}
 	}
 }
