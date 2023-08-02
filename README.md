@@ -13,7 +13,7 @@ Tota la documentació i commits seran, preferiblement, en català.
 - [ ] vscode.clojure.i18n.json
 - [ ] vscode.coffeescript.i18n.json
 - [ ] vscode.configuration-editing.i18n.json
-- [ ] vscode.cpp.i18n.json
+- [x] vscode.cpp.i18n.json
 - [ ] vscode.csharp.i18n.json
 - [ ] vscode.css-language-features.i18n.json
 - [ ] vscode.css.i18n.json
