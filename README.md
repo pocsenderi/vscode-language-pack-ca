@@ -59,7 +59,7 @@ Una vegada tenguis el PAT, hauràs d'emplenar uns secrets al repositori GitHub. 
 - [ ] vscode.html-language-features.i18n.json
 - [ ] vscode.html.i18n.json
 - [ ] vscode.ini.i18n.json
-- [ ] vscode.ipynb.i18n.json
+- [x] vscode.ipynb.i18n.json
 - [ ] vscode.jake.i18n.json
 - [ ] vscode.java.i18n.json
 - [ ] vscode.javascript.i18n.json

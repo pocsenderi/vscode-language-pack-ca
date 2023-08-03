@@ -8,6 +8,7 @@ All notable changes to the "vscode-language-pack-ca" language pack will be docum
 - [toMou -> Mou](https://github.com/aitor-gomila/vscode-language-pack-ca/pull/3)
 - [dipòsit -> repositori](https://github.com/aitor-gomila/vscode-language-pack-ca/pull/4)
 - [Tradueix els comentaris de la extensió ipynb](https://github.com/aitor-gomila/vscode-language-pack-ca/pull/5)
+- [Afegit un workflow per compilar i publicar l'extensió](https://github.com/aitor-gomila/vscode-language-pack-ca/pull/7)
 
 # 1.0.1
 
