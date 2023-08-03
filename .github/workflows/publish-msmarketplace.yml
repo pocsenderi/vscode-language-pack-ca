@@ -3,11 +3,7 @@
 
 name: Publish .vsx to Microsoft Marketplace
 
-on:
-  workflow_call:
-    workflows: ["Package extension to .vsix"]
-    types:
-      - completed
+on: workflow_call
 
 jobs:
   publish-msmarketplace:
