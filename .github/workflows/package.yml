@@ -36,10 +36,7 @@ jobs:
           if-no-files-found: error
       - name: Check if current branch is a tag
         run: git symbolic-ref HEAD
-        continue-on-error: true
-      - name: Set IS_GIT_TAG
-        run: if [ $? -ne 0 ]; then export IS_GIT_TAG="true"; fi
-      - if: env.IS_GIT_TAG == true
+      - if: failure()
         uses: ./.github/workflows/publish-msmarketplace.yml
-      - if: env.IS_GIT_TAG == true
+      - if: success()
         uses: ./.github/workflows/publish-openvsix.yml
