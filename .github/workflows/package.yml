@@ -7,7 +7,14 @@
 
 name: Package extension to .vsix
 
-on: push
+# Run Actions when pushed to any branch, or a semver tag is created
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "*.*.*"
+      - "v*"
 
 jobs:
   package-artifact:
