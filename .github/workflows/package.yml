@@ -35,7 +35,7 @@ jobs:
             *.vsix
           if-no-files-found: error
       - name: Check if current branch is a tag
-        run: git log HEAD^! --oneline --decorate
+        run: git symbolic-ref HEAD
       - name: Set IS_GIT_TAG
         run: if [ $? -ne 0 ]; then export IS_GIT_TAG="true"; fi
       - if: env.IS_GIT_TAG == true
