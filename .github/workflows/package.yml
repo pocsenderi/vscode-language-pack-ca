@@ -36,7 +36,13 @@ jobs:
           if-no-files-found: error
       - name: Check if current branch is a tag
         run: git symbolic-ref HEAD
-      - if: failure()
-        uses: ./.github/workflows/publish-msmarketplace.yml
-      - if: success()
-        uses: ./.github/workflows/publish-openvsix.yml
+  deploy-ms-marketplace:
+    needs:
+      - package-artifact
+    uses: ./.github/workflows/publish-msmarketplace.yml
+    secrets: inherit
+  deploy-open-vsix-marketplace:
+    needs:
+      - package-artifact
+    uses: ./.github/workflows/publish-openvsix.yml
+    secrets: inherit
