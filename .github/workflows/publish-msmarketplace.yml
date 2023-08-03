@@ -1,0 +1,25 @@
+# If a tag is pushed,
+# publishes the .vsix file to Microsoft Marketplace
+
+name: Publish .vsx to Microsoft Marketplace
+
+on:
+  workflow_call:
+    workflows: ["Package extension to .vsix"]
+    types:
+      - completed
+
+jobs:
+  publish-msmarketplace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - name: Install VSCode Extension Manager
+        run: npm install -g @vscode/vsce
+      - name: Login to MS Marketplace
+        run: vsce login ${{ secrets.MS_MARKETLPLACE_PUBLISHER_ID }} > ${{ secrets.MS_MARKETLPLACE_TOKEN }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: vsix-package
+      - name: Publish extension using vsce
+        run: vsce publish --packagePath $(find . -iname *.vsix)

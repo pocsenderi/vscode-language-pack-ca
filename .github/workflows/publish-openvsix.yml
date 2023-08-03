@@ -1,0 +1,25 @@
+# If a tag is pushed,
+# publishes the .vsix file to OpenVSIX
+
+name: Publish .vsx to OpenVSIX
+
+on:
+  workflow_call:
+    workflows: ["Package extension to .vsix"]
+    types:
+      - completed
+
+jobs:
+  publish-msmarketplace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - name: Install Open VSIX Extension Manager
+        run: npm install --global ovsx
+      - name: Login to OpenVSIX
+        run: ovsx create-namespace ${{ secrets.OPEN_VSIX_PUBLISHER_ID }} -p ${{ secrets.OPEN_VSIX_TOKEN }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: vsix-package
+      - name: Publish extension using vsce
+        run: ovsx publish $(find . -iname *.vsix) -p ${{ secrets.OPEN_VSIX_TOKEN }}

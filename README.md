@@ -4,6 +4,28 @@ Aquesta és la traducció no oficial de VSCode al català. Moltes parts estan fe
 
 Tota la documentació i commits seran, preferiblement, en català.
 
+## Com clonar
+
+```
+git clone https://github.com/aitor-gomila/vscode-language-pack-ca.git
+cd vscode-language-pack-ca
+```
+
+Si vols mantenir un fork actiu i fer Releases, hi ha un workflow de [GitHub Actions](https://github.com/features/actions) que permet publicar l'extensió automàticament a VSCode Marketplace i OpenVSIX.
+
+Crea un compte als serveis i crea un Personal Access Token (PAT):
+- [Crear un compte a Microsoft VSCode Marketplace.](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+- [Crear un compte a OpenVSIX.](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions)
+
+Una vegada tenguis el PAT, hauràs d'emplenar uns secrets al repositori GitHub. `Settings` -> `Secrets` -> `Actions` -> `New repository secret`
+
+![GitHub Secrets screenshot](github-secrets-screenshot.jpeg)
+
+- `MS_MARKETLPLACE_PUBLISHER_ID` Azure marketplace publisher id
+- `MS_MARKETLPLACE_TOKEN` Azure marketplace Personal Access Token
+- `OPEN_VSIX_PUBLISHER_ID` Open VSIX marketplace publisher id
+- `OPEN_VSIX_TOKEN` Open VSIX marketplace Personal Access Token
+
 ## To-Do List
 
 - [x] main.i18n.json
