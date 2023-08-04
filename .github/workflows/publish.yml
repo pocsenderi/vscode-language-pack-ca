@@ -1,0 +1,45 @@
+# FIXME: it would be better to separate this workflow into three reusable workflows:
+# package, for compiling the extension to .vsix (on every push),
+# publish-msmarketplace, for publishing the .vsix file to ms marketplace (on tag push),
+# publish-openvsix, for publishing the .vsix file to open vsix (on tag push)
+# these last two could be separated and open sourced as actions
+# but for now this works tho lol
+name: Publish extension
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+      - "v*"
+jobs:
+  package-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - name: Install VSCode Extension Manager
+        run: npm install --global @vscode/vsce
+      - name: Install dependencies
+        run: npm i
+      - name: Create .vsix package
+        run: vsce package
+
+      - name: Install VSCode Extension Manager
+        run: npm install -g @vscode/vsce
+      - name: Login to MS Marketplace
+        run: vsce login ${{ secrets.MS_MARKETLPLACE_PUBLISHER_ID }} > ${{ secrets.MS_MARKETLPLACE_TOKEN }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: vsix-package
+      - name: Publish extension using vsce
+        run: vsce publish --packagePath $(find . -iname *.vsix)
+
+      - name: Install Open VSIX Extension Manager
+        run: npm install --global ovsx
+      - name: Login to OpenVSIX
+        run: ovsx create-namespace ${{ secrets.OPEN_VSIX_PUBLISHER_ID }} -p ${{ secrets.OPEN_VSIX_TOKEN }}
+      - uses: actions/download-artifact@v3
+        with:
+          name: vsix-package
+      - name: Publish extension using vsce
+        run: ovsx publish $(find . -iname *.vsix) -p ${{ secrets.OPEN_VSIX_TOKEN }}
