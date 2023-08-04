@@ -27,7 +27,7 @@ jobs:
       - name: Install VSCode Extension Manager
         run: npm install -g @vscode/vsce
       - name: Login to MS Marketplace
-        run: vsce login ${{ secrets.MS_MARKETLPLACE_PUBLISHER_ID }} > ${{ secrets.MS_MARKETLPLACE_TOKEN }}
+        run: vsce login ${{ secrets.MS_MARKETPLACE_PUBLISHER_ID }} > ${{ secrets.MS_MARKETPLACE_TOKEN }}
       - uses: actions/download-artifact@v3
         with:
           name: vsix-package
