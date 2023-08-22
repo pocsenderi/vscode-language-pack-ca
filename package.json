@@ -3,10 +3,10 @@
 	"displayName": "Catalan Language Pack for Visual Studio Code",
 	"description": "Language pack extension for Catalan",
 	"version": "1.0.2",
-	"publisher": "AitorGomila",
+	"publisher": "Katuak",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/aitor-gomila/vscode-language-pack-ca"
+		"url": "https://github.com/katuak/vscode-language-pack-ca"
 	},
 	"license": "GNU-GPL2.0",
 	"engines": {
