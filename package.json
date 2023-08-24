@@ -2,7 +2,7 @@
 	"name": "vscode-language-pack-ca",
 	"displayName": "Catalan Language Pack for Visual Studio Code",
 	"description": "Language pack extension for Catalan",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"publisher": "Katuak",
 	"repository": {
 		"type": "git",
