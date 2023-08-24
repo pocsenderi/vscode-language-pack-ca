@@ -7,7 +7,7 @@ Tota la documentació i commits seran, preferiblement, en català.
 ## Com clonar
 
 ```
-git clone https://github.com/aitor-gomila/vscode-language-pack-ca.git
+git clone https://github.com/katuak/vscode-language-pack-ca.git
 cd vscode-language-pack-ca
 ```
 
